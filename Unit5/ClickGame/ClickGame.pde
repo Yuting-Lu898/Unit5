@@ -2,8 +2,10 @@ int mode;
 final int INTRO=0,GAME=1,PAUSE=2,GAMEOVER=3;
 
 void setup(){
-mode=GAMEOVER;
+mode=INTRO;
 size(800,800);
+rectMode(CENTER);
+textAlign(CENTER);
 }
 void draw(){
 
