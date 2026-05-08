@@ -11,5 +11,5 @@ popStyle();
 
 void introClicks(){
  if(mouseX>=starX-starWid/2&&mouseX<=starX+starWid/2&&mouseY>=starY-starLen/2&&mouseY<=starY+starLen/2)
-  mode=GAME;
+     mode=LEVEL;
 }
