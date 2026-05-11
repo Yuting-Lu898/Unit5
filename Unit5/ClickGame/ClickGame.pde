@@ -1,7 +1,7 @@
 int mode;
-final int INTRO=0,GAME=1,PAUSE=2,GAMEOVER=3,LEVEL=4;
+final int INTRO=0,GAME=1,PAUSE=2,GAMEOVER=3,LEVEL=4,SET=5;
 int miss,totalmiss=0,level=1;
-float cirWid;float vy,vx;
+float cirWid=50;float vy,vx;
 float x1,y1;
 int score=0;
 
@@ -33,6 +33,9 @@ void draw(){
   }
   else if(mode==GAMEOVER){
     gameover();
+  }
+  else if(mode==SET){
+    setting();
   }
   else{
     println("ERROR: Mode="+ mode);
