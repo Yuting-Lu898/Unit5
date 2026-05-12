@@ -1,9 +1,9 @@
 int starWid=200,starLen=100,starX=250,starY=300;
 int setWid=200,setLen=100,setX=550,setY=300;
-float xx1=width-10,yy1=height/8,   xx2=width/7,yy2=height/1.2,     xx3=width/8,yy3=height-10;
+float xx1=width*7,yy1=height*3,   xx2=width*2,yy2=height/1.2,     xx3=width*3,yy3=height*3;
 float vx1=5,vx2=-5,vx3=-5;float vy1=5,vy2=-5,vy3=5;
 
-String title="Clicker Game",Star="Start Game",set="Setting";
+String title="Clicker Game",Star="Start Game",set="Setting",highscore="Highest Score:";
 
 
 void intro(){
@@ -20,7 +20,7 @@ pushStyle();
 
 Button(starX,starY,starWid,starLen,Star);
 Button(setX,setY,setWid,setLen,set);
-
+text(highscore+highScore,400,400);
 pushStyle();
 textSize(70);
 fill(xx1,yy1,0);

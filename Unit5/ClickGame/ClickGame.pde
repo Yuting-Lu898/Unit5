@@ -1,3 +1,6 @@
+import processing.video.*;
+int highScore=0;
+
 int mode;
 final int INTRO=0,GAME=1,PAUSE=2,GAMEOVER=3,LEVEL=4,SET=5;
 int miss,totalmiss=0,level=1;

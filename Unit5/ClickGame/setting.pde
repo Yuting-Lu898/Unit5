@@ -1,5 +1,5 @@
-float a=220,b=400,slideX=a;float bX=width,bY=height/1.5,bW=150,bL=30;
-String back="Back";
+float a=220,b=400,slideX=a;float bX=width*1.3,bY=height/1.3,bW=150,bL=30;
+String back="Back",takePhoto="Take Photo",openCamera="Open Camera";
 
 void setting(){
 background(255,255,0);
