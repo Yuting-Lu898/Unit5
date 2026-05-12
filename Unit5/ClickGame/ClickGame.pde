@@ -10,13 +10,11 @@ mode=INTRO;
 size(800,500);
 rectMode(CENTER);
 textAlign(CENTER);
-cirWid=width/20;
+cirWid=width/10;
 x1=random(width-10,0);
 y1=random(0,height-10);
-//x1=width/2;y1=height/2;
 vx=5;vy=2;
 }
-
 
 void draw(){
   if(mode==INTRO){

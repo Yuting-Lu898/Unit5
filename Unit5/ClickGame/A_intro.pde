@@ -1,21 +1,29 @@
-int starWid=200,starLen=100,starX=250,starY=300;//int titleWid=400,titleLen=250,titleX=400,titleY=250;
+int starWid=200,starLen=100,starX=250,starY=300;
 int setWid=200,setLen=100,setX=550,setY=300;
-float xx1=width,yy1=height/8,xx2=width/2,yy2=height/2,xx3=width/4,yy3=height;
+float xx1=width-10,yy1=height/8,   xx2=width/7,yy2=height/1.2,     xx3=width/8,yy3=height-10;
 float vx1=5,vx2=-5,vx3=-5;float vy1=5,vy2=-5,vy3=5;
 
 String title="Clicker Game",Star="Start Game",set="Setting";
 
 
 void intro(){
-background(255);
-yuan(xx1,yy1);yuan(xx2,yy2);yuan(xx3,yy3);
+pushStyle();
+background(xx1/10,0,yy1);
+popStyle();
+
+pushStyle();
+
+yuan1(xx1,yy1);yuan1(xx2,yy2);yuan1(xx3,yy3);
 xx1+=vx1;yy1+=vy1;xx2+=vx2;yy2+=vy2;xx3+=vx3;yy3+=vy3;
+pushStyle();
+
 
 Button(starX,starY,starWid,starLen,Star);
 Button(setX,setY,setWid,setLen,set);
 
 pushStyle();
 textSize(70);
+fill(xx1,yy1,0);
 text(title,400,150);
 popStyle();
 

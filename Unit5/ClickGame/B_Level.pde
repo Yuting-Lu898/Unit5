@@ -1,5 +1,6 @@
 int levelSpaceSize=140;
 int level_1_X=120,level_2_X=level_1_X+levelSpaceSize,level_3_X=level_2_X+levelSpaceSize,level_4_X=level_3_X+levelSpaceSize,level_5_X=level_4_X+levelSpaceSize;
+
 int level_Y=200;int buttonWid=120,buttonLen=40;
 String level_1="Level 1",level_2="Not open",level_3="Not open",level_4="Not open",level_5="Not open";
 void level(){
@@ -16,6 +17,36 @@ void levelClicks(){
       mode=GAME;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  //else if(mouseX>=level_2_X-buttonWid/2&&mouseX<=level_2_X+buttonWid/2&&mouseY>=level_Y-buttonLen/2&&mouseY<=level_Y+buttonLen/2){
     //  level=2;
