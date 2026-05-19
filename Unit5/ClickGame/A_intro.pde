@@ -5,12 +5,10 @@ float vx1=5,vx2=-5,vx3=-5;float vy1=5,vy2=-5,vy3=5;
 
 String title="Clicker Game",Star="Start Game",set="Setting",highscore="Highest Score:";
 
-
 void intro(){
 pushStyle();
 background(xx1/10,0,yy1);
 popStyle();
-
 pushStyle();
 
 yuan1(xx1,yy1);yuan1(xx2,yy2);yuan1(xx3,yy3);

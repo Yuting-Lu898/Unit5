@@ -2,7 +2,7 @@ String restar="Restar";
 
 void gameover(){
 background(0,255,255);
-
+ miss=0;
 Button(400,250,130,40,restar);
 
 if(score>highScore){highScore=score;score=0;miss=0;}

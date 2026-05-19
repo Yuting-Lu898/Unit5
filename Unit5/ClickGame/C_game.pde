@@ -17,9 +17,9 @@ fill(255);
 text("Score :"+score,width/2,height/5);
 text("Miss :"+miss,width/2,height/4);
 popMatrix();
-  if(x1<=0||x1>=width)vx*=-1;
+  if(x1-cirWid/2<=-5||x1>=width-cirWid/2+5)vx*=-1;
   
-  if(y1<=0||y1>=height)vy*=-1;
+  if(y1<=cirWid/2+5||y1>=height-cirWid/2+5)vy*=-1;
 }
 
 void gameClicks(){
