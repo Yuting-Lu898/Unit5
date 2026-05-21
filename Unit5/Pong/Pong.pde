@@ -1,6 +1,6 @@
 int mode;
 int INTRO=0,GAME=1,PAUSE=2,GAMEOVER=3,LEVEL=4,SET=5;
-
+String mo1="1 Player",mo2="2 Player";
 
 float lx,ly,ld,rx,ry,rd;
 float ballx,bally,balld;
@@ -17,15 +17,15 @@ textAlign(CENTER);
 
 lx=0;
 ly=height/2;
-ld=200;
+ld=100;
 
 rx=width;
 ry=height/2;
-rd=200;
+rd=100;
 
 bally=height/2;
 ballx=width/2;
-balld=100;
+balld=50;
 
 
 wkey=skey=upkey=downkey=false;

@@ -1,5 +1,10 @@
 void gameover(){
+if(lScore>rScore){
 
+}
+else {
+
+}
 
 
 }

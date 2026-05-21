@@ -14,7 +14,7 @@ void yuan(float x,float y){
     mask.fill(255);
     mask.noStroke();
     mask.circle(circlePhoto.width/2,
-                circlePhoto.height/2,
+                circlePhoto.width/2,
                 circlePhoto.width);
 
     mask.endDraw();
