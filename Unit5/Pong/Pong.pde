@@ -1,6 +1,16 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+
+
 int mode;
 int INTRO=0,GAME=1,PAUSE=2,GAMEOVER=3,LEVEL=4,SET=5;
 String mo1="1 Player",mo2="2 Player";
+boolean AI;
 
 float lx,ly,ld,rx,ry,rd;
 float ballx,bally,balld;

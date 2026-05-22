@@ -6,6 +6,8 @@ float vx1=5,vx2=-5,vx3=-5;float vy1=5,vy2=-5,vy3=5;
 String title="Clicker Game",Star="Start Game",set="Setting",highscore="Highest Score:";
 
 void intro(){
+  theme.play();
+  
 pushStyle();
 background(xx1/10,0,yy1);
 popStyle();

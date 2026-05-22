@@ -24,7 +24,9 @@ popMatrix();
 
 void gameClicks(){
  if(dist(mouseX,mouseY,x1,y1)<=cirWid/1.4){
-      score+=1;
+   coin.rewind();
+   coin.play();
+   score+=1;
  }else if(dist(mouseX,mouseY,50,50)<=50){
    mode=PAUSE;
  }

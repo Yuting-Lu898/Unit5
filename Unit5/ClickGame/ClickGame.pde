@@ -1,4 +1,14 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
  import processing.video.*;
+ 
+ Minim minim;
+ AudioPlayer theme,gameover,coin,bump;
  
  
 int highScore=0;
@@ -20,6 +30,12 @@ x1=random(width/2,cirWid);
 y1=random(cirWid,height/2);
 vx=3;vy=3;
 cam=new Capture(this, 340, 380);
+
+//music
+minim=new Minim(this);
+theme=minim.loadFile("MUSIC.mp3");
+coin=minim.loadFile("SUCCESS.wav");
+gameover=minim.loadFile("FAILURE.wav");
 }
 
 void draw(){

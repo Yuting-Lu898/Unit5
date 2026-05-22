@@ -74,6 +74,7 @@ void drawing(){
   circle(width/2,height/2,height/4);
   fill(brown);
   circle(lx,ly,ld);
+  fill(0,0,255);
   circle(rx,ry,rd);
   //ball
   fill(255,0,0);
