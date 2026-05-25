@@ -1,6 +1,6 @@
 void button(float x,float y,float w,float l, String a){
 pushStyle();
- if(mouseX>=x-w/2&&mouseX<=x+l/2&&mouseY>=y-l/2&&mouseY<=y+l/2){
+ if(mouseX>=x-w/2&&mouseX<=x+w/2&&mouseY>=y-l/2&&mouseY<=y+l/2){
       stroke(255,0,0);
     }else{
       stroke(0);

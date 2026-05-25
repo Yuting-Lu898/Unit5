@@ -21,6 +21,7 @@ boolean wkey,skey,upkey,downkey;
 void setup(){
 mode=INTRO;
 size(800,500);
+background(0);
 rectMode(CENTER);
 textAlign(CENTER);
 

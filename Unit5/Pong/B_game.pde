@@ -2,11 +2,28 @@ color brown = #8B5E3C,softTerracotta = #C97B63;
 int rScore=0,lScore=0;
 float vx=2;
 float vy=2;
-
+float sp=5;int time=300;
 void game(){
 
 background(softTerracotta);
+text(time,width/2,height/2);
+time-=1.0/frameRate;
+
+if(AI){
+   if(ballx>=width/2){
+      if(bally>ry+sp){
+          ry+=sp;
+      }
+      else if(bally<ry-sp){
+        ry-=sp;
+      }
+   }
+    
+}
+ry=constrain(ry,rd,height-rd);
+
   drawing();
+  
 //left paddle
 if(dist(lx,ly,ballx,bally)<=(ld+balld)/2){
   vx=(ballx-lx)/10;
@@ -49,6 +66,7 @@ if(upkey&&ry-rd>0)ry-=5;
 
 if(downkey&&ry+rd<height)ry+=5;
 
+if(time<=0)mode=GAMEOVER;
 }
 
 void gameClick(){
