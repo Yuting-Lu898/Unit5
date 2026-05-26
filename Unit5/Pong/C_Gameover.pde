@@ -1,5 +1,7 @@
 String l="LEFT WIN",r="RIGHT WIN",ti="TIE";
 void gameover(){
+  start.pause();
+  end.play();
 if(lScore>rScore){
    pushStyle();
    textSize(50);
@@ -19,7 +21,6 @@ else  {
   
    popStyle();
 }
-time=0;
 
 button(width/2,height/2+100,220,70,"RESTART");
 
@@ -30,7 +31,7 @@ button(width/2,height/2+100,220,70,"RESTART");
 void gameoverClick(){
 
 if(mouseX>=width/2-110&&mouseX<=width/2+110&&mouseY>=height/2+65&&mouseY<=height/2+135){
-mode=INTRO;
+  mode=INTRO;start.rewind();
 }
 
 }

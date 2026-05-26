@@ -16,7 +16,8 @@ float lx,ly,ld,rx,ry,rd;
 float ballx,bally,balld;
 
 boolean wkey,skey,upkey,downkey;
-
+AudioPlayer start,boun,end;
+Minim minim;
 
 void setup(){
 mode=INTRO;
@@ -25,6 +26,10 @@ background(0);
 rectMode(CENTER);
 textAlign(CENTER);
 
+minim=new Minim(this);
+start=minim.loadFile("main.mp3");
+boun=minim.loadFile("bon.mp3");
+end=minim.loadFile("over.mp3");
 
 lx=0;
 ly=height/2;
@@ -72,7 +77,7 @@ else if(mode==GAME){
   }
   
 else if(mode==PAUSE){
-    pauseClick();
+    //pauseClick();
   }
 else if(mode==GAMEOVER){
     gameoverClick();
