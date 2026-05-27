@@ -1,6 +1,6 @@
 color brown = #8B5E3C,softTerracotta = #C97B63;
 int rScore=0,lScore=0;
-float vx=2;
+float vx=-2;
 float vy=2;
 float sp=5;int time=800;
 void game(){
@@ -59,20 +59,14 @@ if(ballx+balld/4>=width){
 }
 //controls
 if(wkey&&ly-ld>0)ly-=5;
-
 if(skey&&ly+ld<height)ly+=5;
-
 if(upkey&&ry-rd>0)ry-=5;
-
 if(downkey&&ry+rd<height)ry+=5;
-
+//end
 if(time<=0){mode=GAMEOVER;time=600;}
 }
 
 void gameClick(){
-
-
-
 }
 
 

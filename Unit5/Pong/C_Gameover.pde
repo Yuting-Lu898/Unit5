@@ -31,7 +31,7 @@ button(width/2,height/2+100,220,70,"RESTART");
 void gameoverClick(){
 
 if(mouseX>=width/2-110&&mouseX<=width/2+110&&mouseY>=height/2+65&&mouseY<=height/2+135){
-  mode=INTRO;start.rewind();
+  mode=INTRO;start.rewind();lScore=rScore=0;
 }
 
 }

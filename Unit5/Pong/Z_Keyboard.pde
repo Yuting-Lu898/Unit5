@@ -6,18 +6,6 @@ if(!AI){
   if(keyCode==UP)upkey=true;
   if(keyCode==DOWN)downkey=true;
 }
-//else{
-//  if(ballx>=width/2){
-//    if(bally<ry){
-//      ry+=vx;
-//    }
-//    else{
-//      ry-=vx;
-//    }
-  
-//  }
-  
-//}
 
 }
 
