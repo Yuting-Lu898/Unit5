@@ -1,5 +1,5 @@
 color brown = #8B5E3C,softTerracotta = #C97B63;
-int Score=0;
+int Score=0,life=4;
 float vx=0;
 float vy=2;
 
@@ -26,16 +26,17 @@ void game(){
   //top and buttom
   if(by<=bw/2||by>=height-bw/2){
     vy*=-1;
+    life--;bx=width/2;by=300;vx=0;vy=2;
   }
-  if(bx<=bw/2||bx>=width-bw/2){
-    vx*=-1;
-  }
-
+  //side
+  if(bx<=bw/2||bx>=width-bw/2)vx*=-1;
+  
+  
+  if(Score==r*c||life==0)mode=GAMEOVER;
 }
 
 void gameClick(){
 }
-
 void drawing(){
   //circle
   for(int i=0;i<r;i++){
@@ -53,12 +54,16 @@ void drawing(){
   //ball
   fill(255,0,0);
   circle(bx,by,bw);
-  
+  //Score
   textSize(50);
   fill(255,0,0);
-  text(Score,width/4,height/10);
+  text(Score,width/2,height/10);
   popStyle();
 }
+
+
+
+
 
 void brickManage(int i,int j){
 
@@ -73,11 +78,8 @@ void brickManage(int i,int j){
     circle(brickX,brickY,pointW);
     
       if(dist(brickX,brickY,bx,by)<=(pointW+bw)/2){
-      
         alive[i][j]=false;
-        
         Score++;
-        
         vy*=-1;
       }
   }

@@ -1,3 +1,13 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+Minim minim;
+AudioPlayer theme,over,bounce,score;
+
 int mode;
 int INTRO=0,GAME=1,GAMEOVER=2;
 //padd
@@ -14,7 +24,7 @@ int[] y;
 boolean[][] alive;
 //row colomn
 int r=5,c=3;
-//space
+//horizontal space  vertical space
 int hs=50,vs=50;
 
 
