@@ -9,7 +9,7 @@ Minim minim;
 AudioPlayer theme,over,bounce,score;
 
 int mode;
-int INTRO=0,GAME=1,GAMEOVER=2;
+int INTRO=0,GAME=1,GAMEOVER=2,PAUSE=3;
 //padd
 float xx,yy,pw;
 //ball
@@ -23,7 +23,7 @@ int[] x;
 int[] y;
 boolean[][] alive;
 //row colomn
-int r=5,c=3;
+int r=9,c=3;
 //horizontal space  vertical space
 int hs=50,vs=50;
 
@@ -31,8 +31,14 @@ int hs=50,vs=50;
 void setup(){
   textAlign(CENTER);
   rectMode(CENTER);
-  size(300,500);
+  size(500,500);
   mode=INTRO;
+  //music
+  minim=new Minim(this);
+  theme=minim.loadFile("start.mp3");
+  over=minim.loadFile("lost.mp3");
+  score=minim.loadFile("bon.mp3");
+  
   
   xx=width/2;
   yy=height;
@@ -66,6 +72,9 @@ void draw(){
   else if(mode==GAMEOVER){
     gameover();
   }
+  else if(mode==PAUSE){
+    pause();
+  }
 }
 
 void mouseClicked(){
@@ -77,5 +86,8 @@ void mouseClicked(){
   }
   else if(mode==GAMEOVER){
     gameoverClick();
+  }
+  else if(mode==PAUSE){
+    pauseClicked();
   }
 }

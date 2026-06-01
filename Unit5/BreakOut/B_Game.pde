@@ -2,8 +2,8 @@ color brown = #8B5E3C,softTerracotta = #C97B63;
 int Score=0,life=4;
 float vx=0;
 float vy=2;
-
-
+//Pause button
+int px=width/2,py=20,pr=py*2;
 //GAME
 void game(){
   background(softTerracotta);
@@ -24,10 +24,11 @@ void game(){
   if(dkey)xx+=5;
   
   //top and buttom
-  if(by<=bw/2||by>=height-bw/2){
+  if(by>=height-bw/2+10){
     vy*=-1;
     life--;bx=width/2;by=300;vx=0;vy=2;
   }
+  if(by<=bw/2)vy*=-1;
   //side
   if(bx<=bw/2||bx>=width-bw/2)vx*=-1;
   
@@ -36,8 +37,21 @@ void game(){
 }
 
 void gameClick(){
+  if(dist(mouseX,mouseY,px,py)<pr/2)mode=PAUSE;
 }
 void drawing(){
+  //pause button
+  if(dist(mouseX,mouseY,px,py)<pr/2)stroke(255,0,0);
+  else stroke(0);
+  
+  fill(255);
+  circle(px,py,pr);
+  
+  fill(0);
+  textSize(18);
+  text("||",px,py+5);
+  
+  stroke(0);
   //circle
   for(int i=0;i<r;i++){
     for(int j=0;j<c;j++) {
@@ -55,10 +69,13 @@ void drawing(){
   fill(255,0,0);
   circle(bx,by,bw);
   //Score
-  textSize(50);
+  textSize(30);
   fill(255,0,0);
-  text(Score,width/2,height/10);
-  popStyle();
+  text("Score: "+Score,width/4,height-20);
+  
+  //Life
+  fill(0,0,255);
+  text("Life: "+life,width*3/4,height-20);
 }
 
 
@@ -78,6 +95,8 @@ void brickManage(int i,int j){
     circle(brickX,brickY,pointW);
     
       if(dist(brickX,brickY,bx,by)<=(pointW+bw)/2){
+        score.play();
+        score.rewind();
         alive[i][j]=false;
         Score++;
         vy*=-1;
