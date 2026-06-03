@@ -14,8 +14,11 @@ boolean AI;
 
 float lx,ly,ld,rx,ry,rd;
 float ballx,bally,balld;
-
+//up down
 boolean wkey,skey,upkey,downkey;
+//turning
+boolean akey,dkey,lekey,rikey;
+
 Minim minim;
 
 void setup(){

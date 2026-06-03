@@ -1,0 +1,29 @@
+void car(float x,float y,color c){
+  pushMatrix();
+  
+  translate(x,y);
+  
+  //body
+  fill(c);
+  rectMode(CENTER);
+  rect(0,0,40,70,8);
+  
+  //windshield
+  fill(150,200,255);
+  rect(0,-15,25,20,5);
+  
+  //rear window
+  rect(0,15,25,20,5);
+  
+  //wheels
+  fill(30);
+  
+  rect(-20,-20,8,15);
+  rect(20,-20,8,15);
+  
+  rect(-20,20,8,15);
+  rect(20,20,8,15);
+  
+  popMatrix();
+
+}
