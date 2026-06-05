@@ -4,41 +4,42 @@ float vx=2;
 float vy=8;
 float sp=5;
 int time=800;
-float x1=400, y1=400, x2=300, y2=400;
+float x1=200, y1=400, x2=400, y2=400;
 //rotation
 float angle1=0, angle2=0;
 //vx
 float car1vx, car2vx;
 //road
-int roadspa=150,roadhe=80,linew=5,linel=20,move=5;
+int roadspa=150, roadhe=80, linew=5, linel=20, move=5;
 //life
-int life1=4,life2=4;
+int life1=4, life2=4;
 
 void game() {
   background(0, 255, 0);
   //backroad
   drawing();
-  
-  
+//////////
+
   //limit
   x1=constrain(x1, 10, 790);
   x2=constrain(x2, 10, 790);
-  //y1=constrain(y1, 20, 480);
-  //y2=constrain(y2, 20, 480);
-  //backwords
-  y1+=2;y2+=2;
-  if(y1>height+30){
+  //y1=constrain(y1, -100, 510);
+  //y2=constrain(y2, -100, 510);
+  //backwards
+  y1+=2;
+  y2+=2;
+  if (y1>height+30) {
     life1--;
     y1=height/2+50;
   }
-  if(y2>height+30){
+  if (y2>height+30) {
     life2--;
     y2=height/2+50;
   }
-  
-  
-  
-  
+
+
+
+
   //Car 1 up and down
   if (wkey)y1-=5;
   if (skey)y1+=5;
@@ -90,13 +91,13 @@ void drawing() {
   pushStyle();
   strokeWeight(50);
   stroke(255);
-  rect(15,0,30,height*2);
-  rect(width-15,0,30,height*2);
-  if(move>=80)move=0;
-  
-  for(int i=30;i<width-30;i+=roadspa){
-    for(int j=-roadhe+move;j<width;j+=roadhe){
-        dashline(i,j,linew,linel);
+  rect(15, 0, 30, height*2);
+  rect(width-15, 0, 30, height*2);
+  if (move>=80)move=0;
+
+  for (int i=30; i<width-30; i+=roadspa) {
+    for (int j=-roadhe+move; j<width; j+=roadhe) {
+      dashline(i, j, linew, linel);
     }
   }
   move+=5;

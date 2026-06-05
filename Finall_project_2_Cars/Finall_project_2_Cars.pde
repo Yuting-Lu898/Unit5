@@ -8,58 +8,54 @@ import ddf.minim.ugens.*;
 
 
 int mode;
-int INTRO=0,GAME=1,PAUSE=2,GAMEOVER=3,LEVEL=4,SET=5;
-String mo1="1 Player",mo2="2 Player";
+int INTRO=0, GAME=1, PAUSE=2, GAMEOVER=3, LEVEL=4, SET=5;
+String mo1="1 Player", mo2="2 Player";
 boolean AI;
 
-float lx,ly,ld,rx,ry,rd;
-float ballx,bally,balld;
+float lx, ly, ld, rx, ry, rd;
+float ballx, bally, balld;
 //up down
-boolean wkey,skey,upkey,downkey;
+boolean wkey, skey, upkey, downkey;
 //turning
-boolean akey,dkey,lekey,rikey;
+boolean akey, dkey, lekey, rikey;
 
 Minim minim;
 
-void setup(){
-mode=INTRO;
-size(800,500);
-background(0);
-rectMode(CENTER);
-textAlign(CENTER);
+void setup() {
+  mode=INTRO;
+  size(800, 500);
+  background(0);
+  rectMode(CENTER);
+  textAlign(CENTER);
 
-minim=new Minim(this);
+  minim=new Minim(this);
 
-lx=0;
-ly=height/2;
-ld=100;
+  lx=0;
+  ly=height/2;
+  ld=100;
 
-rx=width;
-ry=height/2;
-rd=100;
+  rx=width;
+  ry=height/2;
+  rd=100;
 
-bally=height/2;
-ballx=width/2;
-balld=50;
+  bally=height/2;
+  ballx=width/2;
+  balld=50;
 
 
-wkey=skey=upkey=downkey=false;
+  wkey=skey=upkey=downkey=false;
 }
 
-void draw(){
-  if(mode==INTRO){
+void draw() {
+  if (mode==INTRO) {
     intro();
-  }
-  else if(mode==GAME){
+  } else if (mode==GAME) {
     game();
-  }
-  else if(mode==PAUSE){
+  } else if (mode==PAUSE) {
     pause();
-  }
-  else if(mode==GAMEOVER){
+  } else if (mode==GAMEOVER) {
     gameover();
-  }
-  else{
+  } else {
     println("ERROR: Mode="+ mode);
   }
 }
@@ -67,18 +63,14 @@ void draw(){
 
 
 
-void mouseClicked(){
-if(mode==INTRO){
+void mouseClicked() {
+  if (mode==INTRO) {
     introClick();
-  }
-else if(mode==GAME){
+  } else if (mode==GAME) {
     gameClick();
-  }
-  
-else if(mode==PAUSE){
+  } else if (mode==PAUSE) {
     //pauseClick();
-  }
-else if(mode==GAMEOVER){
+  } else if (mode==GAMEOVER) {
     gameoverClick();
   }
 }
