@@ -23,3 +23,12 @@ void car(float x, float y, color c) {
   rect(10, -30, 15, 10, 10);
   popMatrix();
 }
+
+void carTurn(float x,float y,float angle,color so){
+  pushMatrix();
+  translate(x, y);
+  rotate(angle);
+  car(0, 0, so);
+  popMatrix();
+
+}
