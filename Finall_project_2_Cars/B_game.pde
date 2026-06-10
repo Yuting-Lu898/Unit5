@@ -1,4 +1,4 @@
-color brown = #8B5E3C, softTerracotta = #C97B63;
+color brown = #8B5E3C, softTerracotta = #C97B63,black=#FFFFFF;
 int rScore=0, lScore=0;
 //accelaration
 float speed1=2, speed2=2;
@@ -90,7 +90,7 @@ void game() {
     y1 + 70 >= y2 &&       // r1 top edge past r2 bottom
     y1 <= y2 + 70) {// r1 bottom edge past r2 top
     crash();
-  }
+    }
 }
 
 void gameClick() {
@@ -112,6 +112,12 @@ void drawing() {
   }
   move+=5;
   popStyle();
+  comeCars();
+}
+
+void comeCars(){
+comeCar(200,400,black);
+  
 }
 
 void crash() {

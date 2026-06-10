@@ -24,11 +24,28 @@ void car(float x, float y, color c) {
   popMatrix();
 }
 
-void carTurn(float x,float y,float angle,color so){
+void carTurn(float x, float y, float angle, color so) {
   pushMatrix();
   translate(x, y);
   rotate(angle);
   car(0, 0, so);
   popMatrix();
+}
 
+void comeCar(float x, float y, color c) {
+  pushMatrix();
+  translate(x, y);
+  rotate(radians(180));
+  car(x, y, c);
+  popMatrix();
+  if (dist(x2, y2, x, y)<50) {
+    life2--;
+    x=random(80, width-80);
+    y=-100;
+  }
+  if (dist(x1, y1, x, y)<50) {
+    life1--;
+    x=random(80, width-80);
+    y=-100;
+  }
 }

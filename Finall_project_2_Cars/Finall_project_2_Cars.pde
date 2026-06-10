@@ -5,8 +5,6 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
-
-
 int mode;
 int INTRO=0, GAME=1, PAUSE=2, GAMEOVER=3, LEVEL=4, SET=5;
 String mo1="1 Player", mo2="2 Player";
@@ -20,6 +18,11 @@ boolean wkey, skey, upkey, downkey;
 boolean akey, dkey, lekey, rikey;
 
 Minim minim;
+
+//car come
+int carx[],cary[];
+int row=6,col=6;
+
 
 void setup() {
   mode=INTRO;
