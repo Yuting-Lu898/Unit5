@@ -1,4 +1,4 @@
-color brown = #8B5E3C, softTerracotta = #C97B63,black=#FFFFFF;
+color brown = #8B5E3C, softTerracotta = #C97B63, black=#FFFFFF;
 int rScore=0, lScore=0;
 //accelaration
 float speed1=2, speed2=2;
@@ -16,16 +16,22 @@ float car1vx, car2vx;
 int roadspa=150, roadhe=80, linew=5, linel=20, move=3;
 //life
 int life1=4, life2=4;
+String lif1="Player1 Life:", lif2="Player2 Life:";
 
 void game() {
   background(0, 255, 0);
   //backroad
   drawing();
+  fill(0);
+  textSize(20);
+  text(lif1+life1, 100, 40);
+  text(lif2+life2, 700, 40);
   //limit
   x1=constrain(x1, 10, 790);
   x2=constrain(x2, 10, 790);
-  y1+=1;y2+=1;
-  
+  y1+=1;
+  y2+=1;
+
   if (y1>height+30) {
     life1--;
     y1=height/2-50;
@@ -80,9 +86,9 @@ void game() {
   angle2=map(constrain(car2vx, -5, 5), -10, 10, radians(-45), radians(45));
 
   //car1
-  carTurn(x1, y1, angle1, brown);
+  carTurn(x1, y1, angle1, brown,1);
   //car2
-  carTurn(x2, y2, angle2, softTerracotta);
+  carTurn(x2, y2, angle2, softTerracotta,2);
 
 
   if (x1 + 40 >= x2 &&     // r1 right edge past r2 left
@@ -90,7 +96,9 @@ void game() {
     y1 + 70 >= y2 &&       // r1 top edge past r2 bottom
     y1 <= y2 + 70) {// r1 bottom edge past r2 top
     crash();
-    }
+  }
+  //gameover
+  if(life1==0||life2==0) mode=GAMEOVER;
 }
 
 void gameClick() {
@@ -115,9 +123,8 @@ void drawing() {
   comeCars();
 }
 
-void comeCars(){
-comeCar(200,400,black);
-  
+void comeCars() {
+  comeCar(400, 600, black);
 }
 
 void crash() {

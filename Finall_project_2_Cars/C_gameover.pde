@@ -1,13 +1,13 @@
-String l="LEFT WIN", r="RIGHT WIN", ti="TIE";
+String l="Player1 WIN", r="Player2 WIN", ti="TIE";
 void gameover() {
-  if (lScore>rScore) {
+  if (life1!=0) {
     pushStyle();
     textSize(50);
     fill(brown);
     text(l, width/2, height/2);
 
     popStyle();
-  } else if (lScore==rScore) {
+  } else if (life1==life2) {
     fill(255);
     text(ti, width/2, height/2);
   } else {
@@ -25,4 +25,5 @@ void gameover() {
 
 
 void gameoverClick() {
+  if(mouseX>=width/2-110&&mouseX<=width/2+110&&mouseY<=height/2+135&&mouseY>=height/2-135)mode=INTRO;
 }

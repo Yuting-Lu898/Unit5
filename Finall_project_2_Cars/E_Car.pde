@@ -1,6 +1,5 @@
 void car(float x, float y, color c) {
   pushMatrix();
-
   translate(x, y);
   //body
   fill(c);
@@ -24,11 +23,12 @@ void car(float x, float y, color c) {
   popMatrix();
 }
 
-void carTurn(float x, float y, float angle, color so) {
+void carTurn(float x, float y, float angle, color so,int nu) {
   pushMatrix();
   translate(x, y);
   rotate(angle);
   car(0, 0, so);
+  text(nu,0,0);
   popMatrix();
 }
 
@@ -36,7 +36,7 @@ void comeCar(float x, float y, color c) {
   pushMatrix();
   translate(x, y);
   rotate(radians(180));
-  car(x, y, c);
+  car(0, 0, c);
   popMatrix();
   if (dist(x2, y2, x, y)<50) {
     life2--;
