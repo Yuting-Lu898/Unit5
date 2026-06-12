@@ -1,4 +1,4 @@
-color brown = #8B5E3C, softTerracotta = #C97B63, black=#FFFFFF;
+
 int rScore=0, lScore=0;
 //accelaration
 float speed1=2, speed2=2;

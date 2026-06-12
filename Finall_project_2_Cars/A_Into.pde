@@ -5,22 +5,23 @@ float lly=height/2, rry=height/2, llx=ccw/2-50, rrx=800;
 float bbx=400, bby=height/2, bbw=50;
 float ssp=20;
 
+String set="Setting";
+
 void intro() {
   background(0);
   //title
-  pushStyle();
   textAlign(CENTER, CENTER);
   textSize(100);
 
   fill(255);
   text("TWO CARS", width/2, 120);
-  popStyle();
   button(b1x, b1y, buttonW, buttonL, mo1);
+  button(b2x, b1y, buttonW, buttonL, set);
 }
 
 void introClick() {
-  if (mouseX>=b1x-buttonW/2&&mouseX<=b1x+buttonW&&mouseY>=b1y-buttonL/2&&mouseY<=b1y+buttonL)
-    mode=GAME;
+  if (mouseX>=b1x-buttonW/2&&mouseX<=b1x+buttonW&&mouseY>=b1y-buttonL/2&&mouseY<=b1y+buttonL)mode=GAME;
+  if (mouseX>=b2x-buttonW/2&&mouseX<=b2x+buttonW&&mouseY>=b1y-buttonL/2&&mouseY<=b1y+buttonL)mode=SET;
 }
 
 void basicSet() {

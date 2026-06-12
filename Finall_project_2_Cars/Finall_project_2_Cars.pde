@@ -4,11 +4,14 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
+//
+int wid=40, leng=20;
+int x=50, y=50,row1=x;
+int col1=y, col2=col1+leng, col3=col2+leng, col4=col3+leng, col5=col4+leng, col6=col5+leng, col7=col6+leng, col8=col7+leng, col9=col8+leng, col10=col9+leng;
 
 int mode;
 int INTRO=0, GAME=1, PAUSE=2, GAMEOVER=3, LEVEL=4, SET=5;
 String mo1="1 Player", mo2="2 Player";
-boolean AI;
 
 float lx, ly, ld, rx, ry, rd;
 float ballx, bally, balld;
@@ -20,8 +23,8 @@ boolean akey, dkey, lekey, rikey;
 Minim minim;
 
 //car come
-int carx[],cary[];
-int row=6,col=6;
+int carx[], cary[];
+int row=6, col=6;
 
 
 void setup() {
@@ -54,6 +57,8 @@ void draw() {
     intro();
   } else if (mode==GAME) {
     game();
+  } else if (mode==SET) {
+    setting();
   } else if (mode==PAUSE) {
     pause();
   } else if (mode==GAMEOVER) {
@@ -71,6 +76,8 @@ void mouseClicked() {
     introClick();
   } else if (mode==GAME) {
     gameClick();
+  } else if (mode==SET) {
+    settingClick();
   } else if (mode==PAUSE) {
     //pauseClick();
   } else if (mode==GAMEOVER) {
