@@ -1,4 +1,4 @@
-int oo=300;
+int oo=600;
 void button(float x, float y, float w, float l, String a) {
   pushStyle();
   if (mouseX>=x-w/2&&mouseX<=x+w/2&&mouseY>=y-l/2&&mouseY<=y+l/2) {
@@ -11,7 +11,7 @@ void button(float x, float y, float w, float l, String a) {
   rect(x, y, w, l);
   fill(255, 0, 0);
   textSize(30);
-  text(a, x, y+10);
+  text(a, x, y);
   popStyle();
 }
 

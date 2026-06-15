@@ -1,6 +1,5 @@
 //color
 color white=#FFFFFF;
-color selectedColor1,selectedColor2;
 color lightGray = #D3D3D3;
 color darkGray = #444444;
 color warmGray = #E8E4D8;
@@ -39,6 +38,7 @@ color skinMid = #E0AC69;
 color skinDark = #8D5524;
 color brown = #8B5E3C;
 color sand = #EED9C4, black=#FFFFFF;
+color selectedColor1=orange,selectedColor2=yellow;
 
 //all button-----------------------
 void button1() {
@@ -52,5 +52,16 @@ void button1() {
   rectButton(row1, col8, purple, lightPurple, darkPurple);
   rectButton(row1, col9, softGold, paleYellow, softTerracotta);
   rectButton(row1, col10, skinLight, skinMid, skinDark);
+  
+  rectButton(row1+oo, col1, red, lightRed, darkRed);
+  rectButton(row1+oo, col2, orange, lightOrange, darkOrange);
+  rectButton(row1+oo, col3, yellow, lightYellow, darkYellow);
+  rectButton(row1+oo, col4, green, lightGreen, black);
+  rectButton(row1+oo, col5, mutedGreen, leaf, moss);
+  rectButton(row1+oo, col6, blue, lightBlue, darkBlue);
+  rectButton(row1+oo, col7, dustyBlue, sky, ocean);
+  rectButton(row1+oo, col8, purple, lightPurple, darkPurple);
+  rectButton(row1+oo, col9, softGold, paleYellow, softTerracotta);
+  rectButton(row1+oo, col10, skinLight, skinMid, skinDark);
   stroke(0);
 }

@@ -5,7 +5,7 @@ float lly=height/2, rry=height/2, llx=ccw/2-50, rrx=800;
 float bbx=400, bby=height/2, bbw=50;
 float ssp=20;
 
-String set="Setting";
+String set="Setting",back="Intro";
 
 void intro() {
   background(0);
@@ -15,7 +15,7 @@ void intro() {
 
   fill(255);
   text("TWO CARS", width/2, 120);
-  button(b1x, b1y, buttonW, buttonL, mo1);
+  button(b1x, b1y, buttonW, buttonL, mo2);
   button(b2x, b1y, buttonW, buttonL, set);
 }
 

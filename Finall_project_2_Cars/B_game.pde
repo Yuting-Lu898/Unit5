@@ -1,5 +1,3 @@
-
-int rScore=0, lScore=0;
 //accelaration
 float speed1=2, speed2=2;
 float minSpeed=2, maxSpeed=8;
@@ -75,7 +73,6 @@ void game() {
   x2+=car2vx;
   car2vx*=0.9;
   if (akey)car1vx-=turnSpeed;
-
   if (dkey)  car1vx+=turnSpeed;
   x1+=car1vx;
   car1vx*=0.9;
@@ -86,9 +83,9 @@ void game() {
   angle2=map(constrain(car2vx, -5, 5), -10, 10, radians(-45), radians(45));
 
   //car1
-  carTurn(x1, y1, angle1, brown,1);
+  carTurn(x1, y1, angle1, selectedColor1,1);
   //car2
-  carTurn(x2, y2, angle2, softTerracotta,2);
+  carTurn(x2, y2, angle2, selectedColor2,2);
 
 
   if (x1 + 40 >= x2 &&     // r1 right edge past r2 left
@@ -124,7 +121,18 @@ void drawing() {
 }
 
 void comeCars() {
-  comeCar(400, 600, black);
+  for(int i=0;i<rr;i++){
+    for(int j=0;j<cc;j++) {
+     // float x3=random(20,780);float y3=random(20,380);
+      color oo=black;
+      if((rr+cc)%3==0)oo=white;
+      if((rr+cc)%3==1)oo=leaf;
+      if((rr+cc)%3==1)oo=moss;
+      
+      if(alive[i][j]==true)
+        comeCar(xx[j],0,oo,i,j);
+    }
+  } 
 }
 
 void crash() {

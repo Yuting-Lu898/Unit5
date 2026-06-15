@@ -6,7 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
 int wid=40, leng=20;
-int x=50, y=50,row1=x;
+int x=50, y=50, row1=x;
 int col1=y, col2=col1+leng, col3=col2+leng, col4=col3+leng, col5=col4+leng, col6=col5+leng, col7=col6+leng, col8=col7+leng, col9=col8+leng, col10=col9+leng;
 
 int mode;
@@ -25,9 +25,25 @@ Minim minim;
 //car come
 int carx[], cary[];
 int row=6, col=6;
+//blick
+int pointW=10;
+int[] xx;
+int[] yy;
+boolean[][] alive;
+//row colomn
+int rr=5, cc=1;
 
 
 void setup() {
+  xx=new int[rr];
+  yy=new int[cc];
+  
+  xx[0]=100; xx[1]=250; xx[2]=400; xx[3]=550; xx[4]=700;
+  
+  alive=new boolean[rr][cc];
+  for (int i=0; i<rr; i++)
+    for (int j=0; j<cc; j++)alive[i][j]=true;
+  //
   mode=INTRO;
   size(800, 500);
   background(0);

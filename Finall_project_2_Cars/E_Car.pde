@@ -1,3 +1,17 @@
+void comeCar(float x, float y, color c,int i,int j) { 
+  pushMatrix();
+  translate(x, y);
+  rotate(radians(180));
+  car(0, 0, c);
+  popMatrix();
+  if (dist(x2, y2, x, y)<50) {
+    life2--;x=random(80, width-80);y=-100;alive[i][j]=false;
+  }
+  if (dist(x1, y1, x, y)<50) {
+    life1--;x=random(80, width-80);y=-100;alive[i][j]=false;
+  }
+}
+
 void car(float x, float y, color c) {
   pushMatrix();
   translate(x, y);
@@ -30,22 +44,4 @@ void carTurn(float x, float y, float angle, color so,int nu) {
   car(0, 0, so);
   text(nu,0,0);
   popMatrix();
-}
-
-void comeCar(float x, float y, color c) {
-  pushMatrix();
-  translate(x, y);
-  rotate(radians(180));
-  car(0, 0, c);
-  popMatrix();
-  if (dist(x2, y2, x, y)<50) {
-    life2--;
-    x=random(80, width-80);
-    y=-100;
-  }
-  if (dist(x1, y1, x, y)<50) {
-    life1--;
-    x=random(80, width-80);
-    y=-100;
-  }
 }
