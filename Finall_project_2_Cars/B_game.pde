@@ -83,9 +83,9 @@ void game() {
   angle2=map(constrain(car2vx, -5, 5), -10, 10, radians(-45), radians(45));
 
   //car1
-  carTurn(x1, y1, angle1, selectedColor1,1);
+  carTurn(x1, y1, angle1, selectedColor1, 1);
   //car2
-  carTurn(x2, y2, angle2, selectedColor2,2);
+  carTurn(x2, y2, angle2, selectedColor2, 2);
 
 
   if (x1 + 40 >= x2 &&     // r1 right edge past r2 left
@@ -95,7 +95,7 @@ void game() {
     crash();
   }
   //gameover
-  if(life1==0||life2==0) mode=GAMEOVER;
+  if (life1==0||life2==0) mode=GAMEOVER;
 }
 
 void gameClick() {
@@ -117,22 +117,22 @@ void drawing() {
   }
   move+=5;
   popStyle();
-  comeCars();
+  
+  comeCars(set_type);
 }
 
-void comeCars() {
-  for(int i=0;i<rr;i++){
-    for(int j=0;j<cc;j++) {
-     // float x3=random(20,780);float y3=random(20,380);
-      color oo=black;
-      if((rr+cc)%3==0)oo=white;
-      if((rr+cc)%3==1)oo=leaf;
-      if((rr+cc)%3==1)oo=moss;
-      
-      if(alive[i][j]==true)
-        comeCar(xx[j],0,oo,i,j);
+void comeCars(float set) {
+
+  if ((millis()-time)%wait==0) {
+
+    if (set==0) {
+      set1();
+    } else if (set==1) {
+      set2();
+    } else {
+      set3();
     }
-  } 
+  }
 }
 
 void crash() {

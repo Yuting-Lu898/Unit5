@@ -4,7 +4,10 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
-//
+//time and set
+float set_type=0;
+int set_time, wait=5000;
+
 int wid=40, leng=20;
 int x=50, y=50, row1=x;
 int col1=y, col2=col1+leng, col3=col2+leng, col4=col3+leng, col5=col4+leng, col6=col5+leng, col7=col6+leng, col8=col7+leng, col9=col8+leng, col10=col9+leng;
@@ -21,28 +24,36 @@ boolean wkey, skey, upkey, downkey;
 boolean akey, dkey, lekey, rikey;
 
 Minim minim;
-
-//car come
-int carx[], cary[];
-int row=6, col=6;
-//blick
+//set1
 int pointW=10;
-int[] xx;
-int[] yy;
-boolean[][] alive;
-//row colomn
-int rr=5, cc=1;
+int[] set1_X={100, 250, 400, 550, 700};
+int set1_Y=0;
+boolean[][] set1_alive;
+int set1_row=5, set1_column=1;
+//set2
+int[] set2_X;
+int set2_Y=0;
+boolean[][] set2_alive;
+int set2_row=5, set2_column=2;
+//set3
+int[] set3_X;
+int set3_Y=0;
+boolean[][] set3_alive;
+int set3_row=3, set3_column=1;
 
 
 void setup() {
-  xx=new int[rr];
-  yy=new int[cc];
-  
-  xx[0]=100; xx[1]=250; xx[2]=400; xx[3]=550; xx[4]=700;
-  
-  alive=new boolean[rr][cc];
-  for (int i=0; i<rr; i++)
-    for (int j=0; j<cc; j++)alive[i][j]=true;
+  set_time=millis();
+  //alive
+  set1_alive=new boolean[set1_column][set1_row];
+  set2_alive=new boolean[set2_column][set2_row];
+  set3_alive=new boolean[set3_column][set3_row];
+  for (int i=0; i<set1_column; i++)
+    for (int j=0; j<set1_row; j++)set1_alive[i][j]=true;
+  for (int i=0; i<set2_column; i++)
+    for (int j=0; j<set2_row; j++)set2_alive[i][j]=true;
+  for (int i=0; i<set3_column; i++)
+    for (int j=0; j<set3_row; j++)set3_alive[i][j]=true;
   //
   mode=INTRO;
   size(800, 500);

@@ -5,10 +5,10 @@ void comeCar(float x, float y, color c,int i,int j) {
   car(0, 0, c);
   popMatrix();
   if (dist(x2, y2, x, y)<50) {
-    life2--;x=random(80, width-80);y=-100;alive[i][j]=false;
+    life2--;x=random(80, width-80);y=-100;set1_alive[i][j]=false;
   }
   if (dist(x1, y1, x, y)<50) {
-    life1--;x=random(80, width-80);y=-100;alive[i][j]=false;
+    life1--;x=random(80, width-80);y=-100;set1_alive[i][j]=false;
   }
 }
 

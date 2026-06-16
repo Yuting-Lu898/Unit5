@@ -1,5 +1,6 @@
 String l="Player1 WIN", r="Player2 WIN", ti="TIE";
 void gameover() {
+  life1=life2=4;
   if (life1!=0) {
     pushStyle();
     textSize(50);
