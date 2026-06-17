@@ -4,6 +4,8 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
+
+PImage background;
 //time and set
 float set_type=0;
 int set_time, wait=5000;
@@ -31,29 +33,36 @@ int set1_Y=0;
 boolean[][] set1_alive;
 int set1_row=5, set1_column=1;
 //set2
-int[] set2_X;
+int[] set2_X={100, 400, 700};
 int set2_Y=0;
-boolean[][] set2_alive;
-int set2_row=5, set2_column=2;
+boolean[] set2_alive;
+int set2_row=5, set2_column=1;
 //set3
-int[] set3_X;
+int[] set3_X={250, 400, 550};
 int set3_Y=0;
-boolean[][] set3_alive;
+boolean[]set3_alive;
 int set3_row=3, set3_column=1;
-
+AudioPlayer theme, crush, engine, gameover,honk,bounce;
 
 void setup() {
-  set_time=millis();
+  minim=new Minim(this);
+  theme=minim.loadFile("background.mp3");
+  gameover=minim.loadFile("gameover.mp3");
+  crush=minim.loadFile("crush.mp3");
+  engine=minim.loadFile("engine.mp3");
+  honk=minim.loadFile("honk.mp3");
+  bounce=minim.loadFile("bounce.mp3");
+  background=loadImage("back.jpg");
   //alive
   set1_alive=new boolean[set1_column][set1_row];
-  set2_alive=new boolean[set2_column][set2_row];
-  set3_alive=new boolean[set3_column][set3_row];
+  set2_alive=new boolean[set2_row];
+  set3_alive=new boolean[set3_row];
   for (int i=0; i<set1_column; i++)
     for (int j=0; j<set1_row; j++)set1_alive[i][j]=true;
   for (int i=0; i<set2_column; i++)
-    for (int j=0; j<set2_row; j++)set2_alive[i][j]=true;
-  for (int i=0; i<set3_column; i++)
-    for (int j=0; j<set3_row; j++)set3_alive[i][j]=true;
+    set2_alive[i]=true;
+  for (int i=0; i<set3_row; i++)
+    set3_alive[i]=true;
   //
   mode=INTRO;
   size(800, 500);

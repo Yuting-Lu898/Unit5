@@ -1,14 +1,39 @@
-void comeCar(float x, float y, color c,int i,int j) { 
+void comeCar1(float x, float y, color c, int i, int j) {
   pushMatrix();
   translate(x, y);
   rotate(radians(180));
   car(0, 0, c);
   popMatrix();
   if (dist(x2, y2, x, y)<50) {
-    life2--;x=random(80, width-80);y=-100;set1_alive[i][j]=false;
+    life2--;
+    set1_alive[i][j]=false;
+    crush.play();
+    crush.rewind();
   }
   if (dist(x1, y1, x, y)<50) {
-    life1--;x=random(80, width-80);y=-100;set1_alive[i][j]=false;
+    life1--;
+    set1_alive[i][j]=false;crush.play();
+    crush.rewind();
+  }
+}
+
+void comeCar2(float x, float y, color c, int i) {
+  pushMatrix();
+  translate(x, y);
+  rotate(radians(180));
+  car(0, 0, c);
+  popMatrix();
+  if (dist(x2, y2, x, y)<50) {
+    crush.play();
+    crush.rewind();
+    life2--;
+    set2_alive[i]=false;
+  }
+  if (dist(x1, y1, x, y)<50) {
+    crush.play();
+    crush.rewind();
+    life1--;
+    set2_alive[i]=false;
   }
 }
 
@@ -37,11 +62,30 @@ void car(float x, float y, color c) {
   popMatrix();
 }
 
-void carTurn(float x, float y, float angle, color so,int nu) {
+void carTurn(float x, float y, float angle, color so, int nu) {
   pushMatrix();
   translate(x, y);
   rotate(angle);
   car(0, 0, so);
-  text(nu,0,0);
+  text(nu, 0, 0);
   popMatrix();
+}
+
+
+void comeCar3(float x, float y, color c, int i) {
+  pushMatrix();
+  translate(x, y);
+  rotate(radians(180));
+  car(0, 0, c);
+  popMatrix();
+  if (dist(x2, y2, x, y)<50) {
+    life2--;
+    set3_alive[i]=false;crush.play();
+    crush.rewind();
+  }
+  if (dist(x1, y1, x, y)<50) {
+    life1--;
+    set3_alive[i]=false;crush.play();
+    crush.rewind();
+  }
 }

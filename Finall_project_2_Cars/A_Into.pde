@@ -8,7 +8,9 @@ float ssp=20;
 String set="Setting",back="Intro";
 
 void intro() {
-  background(0);
+  //background(0);
+    theme.play();
+  image(background,0,0,800,500);
   //title
   textAlign(CENTER, CENTER);
   textSize(100);

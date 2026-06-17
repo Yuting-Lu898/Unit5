@@ -48,19 +48,31 @@ void game() {
     if (speed1<minSpeed)speed1=minSpeed;
   }
 
-  if (wkey)y1-=speed1;
-  if (skey)y1+=speed1;
+  if (wkey) {
+    y1-=speed1;
+  }
+  if (skey) {
+    y1+=speed1;
+
+  }
+   
   //car2 up and down
   if (upkey||downkey) {
     speed2+=accel;
+
     if (speed2>maxSpeed)speed2=maxSpeed;
   } else {
     speed2-=decel;
     if (speed2<minSpeed)speed2=minSpeed;
   }
 
-  if (upkey)y2-=speed2;
-  if (downkey)y2+=speed2;
+  if (upkey) {
+    y2-=speed2;
+  }
+  
+  if (downkey) {
+    y2+=speed2;
+  }
   x1+=car1vx;
   car1vx*=0.9;
 
@@ -117,21 +129,18 @@ void drawing() {
   }
   move+=5;
   popStyle();
-  
+
   comeCars(set_type);
 }
 
 void comeCars(float set) {
 
-  if ((millis()-time)%wait==0) {
-
-    if (set==0) {
-      set1();
-    } else if (set==1) {
-      set2();
-    } else {
-      set3();
-    }
+  if (set==0) {
+    set1();
+  } else if (set==1) {
+    set2();
+  } else {
+    set3();
   }
 }
 
