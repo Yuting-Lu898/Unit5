@@ -152,4 +152,7 @@ void crash() {
   }
   car1vx+=dx*5;
   car2vx-=dx*5;
+  
+  bounce.play();
+  bounce.rewind();
 }
